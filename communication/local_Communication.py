@@ -11,11 +11,11 @@ async def send_message(ctx:Context):
     await ctx.send(spice.address,Message(message="I'm Hungry!!!!"))
 
 @user.on_message(model=Message)
-async def spice_message_handler(ctx:Context, sender:str, incomingMessage:Message ):
+async def user_message_handler(ctx:Context, sender:str, incomingMessage:Message ):
     ctx.logger.info(f"Received message from {sender}: {incomingMessage.message}")
 
 @spice.on_message(model=Message)
-async def slaanesh_message_handler(ctx: Context, sender: str, incomingMessage: Message):
+async def spice_message_handler(ctx: Context, sender: str, incomingMessage: Message):
     ctx.logger.info(f"Received message from {sender}: {incomingMessage.message}")
     await ctx.send(user.address, Message(message="Go buy something!"))
 
