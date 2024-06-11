@@ -2,7 +2,6 @@ import json
 from flask import Flask, jsonify,request
 from uagents.query import query
 from uagents import Model
-import json
 
 data = {
     "points": [
